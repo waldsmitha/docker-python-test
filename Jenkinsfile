@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-	state('Clone Repo') {
+	stage('Clone Repo') {
 	    steps {
 		git branch: 'master', url: 'https://github.com/waldsmitha/docker-python-test.git'
 	    }
