@@ -13,6 +13,15 @@ pipeline {
 		}
             }
         }
+        stage('push image') {
+            steps {
+		script {
+                    docker.withRegistry('http://192.168.0.119:5000') {
+			app.push("${env.BUILD_NUMBER}")	
+		    }
+		}
+            }
+	}
     }
 }
 
